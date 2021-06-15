@@ -40,7 +40,7 @@ class API(object):
             raise("api_response expects List as input. Please check the input type and re-run")
         for query in queries:
             try:
-                results[query] = API.get_api_response(query, api)
+                results[query] = API.get_api_response(api, query)
             except Exception as e:
                 logging.warning(str(e) + " for query {}".format(query))
                 results[query] = None
